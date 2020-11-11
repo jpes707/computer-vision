@@ -164,7 +164,7 @@ def calculate_point_in_vector_direction(vector_start_point, vector_end_point, un
     return (int(round((1 - t) * vector_start_point[0] + t * vector_end_point[0])), int(round((1 - t) * vector_start_point[1] + t * vector_end_point[1])))
 
 
-def generate_random_points():
+def generate_convex_quadrilateral_points():
     triangular_area = 0
     while triangular_area == 0:  # loops while points are colinear by checking the area of the triangle the points form
         points = numpy.array(sorted((randint(R_POINTS, WIDTH - R_POINTS - 1), randint(R_POINTS, WIDTH - R_POINTS - 1)) for i in range(3)))
@@ -223,7 +223,7 @@ if len(sys.argv) > 1:
     points_read = [int(round(float(endpoint) * WIDTH)) for line in open(get_relative_path(sys.argv[1]), 'r').readlines()[:4] for endpoint in line[:-1].split(' ')]
     points = numpy.array([[points_read[idx], points_read[idx + 1]] for idx in range(0, len(points_read), 2)])
 else:
-    points = generate_random_points()
+    points = generate_convex_quadrilateral_points()
 
 while True:
     try:
@@ -231,6 +231,6 @@ while True:
         break
     except:
         IMG = Image.new('RGB', (WIDTH, WIDTH), (0, 0, 0))
-        points = generate_random_points()
+        points = generate_convex_quadrilateral_points()
 
 save_image('square.png')
