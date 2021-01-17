@@ -1,0 +1,34 @@
+TRIAL COUNT: 100 POINTS
+----------------------
+Brute force => 0.00499s
+Recursive => 0.00297s
+Randomized => 0.000995s
+----------------------
+
+TRIAL COUNT: 1000 POINTS
+----------------------
+Brute force => 0.623s
+Recursive => 0.018s
+Randomized => 0.00798s
+----------------------
+
+TRIAL COUNT: 10000 POINTS
+----------------------
+Brute force => 58.2s
+Recursive => 0.225s
+Randomized => 0.0738s
+----------------------
+
+TRIAL COUNT: 100000 POINTS
+----------------------
+Brute force => TOO LONG TO MEASURE
+Recursive => 2.74s
+Randomized => 1.12s
+----------------------
+
+TRIAL COUNT: 1000000 POINTS
+----------------------
+Brute force => TOO LONG TO MEASURE
+Recursive => 21.4s
+Randomized => 16.5s
+----------------------
